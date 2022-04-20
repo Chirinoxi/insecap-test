@@ -3168,6 +3168,7 @@
     <Folder Include="Content\js\carousel\" />
     <Folder Include="Controllers\Contacto\" />
     <Folder Include="Files\" />
+    <Folder Include="Views\Categoria\" />
     <Folder Include="Views\Descargar\" />
   </ItemGroup>
   <ItemGroup>

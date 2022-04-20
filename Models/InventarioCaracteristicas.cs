@@ -31,6 +31,7 @@
 
         public string Almacenamiento2 { get; set; }
 
+        public virtual Categoria categoria { get; set; }
 
     }
 }

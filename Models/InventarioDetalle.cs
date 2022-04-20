@@ -18,5 +18,9 @@
         public int idInventario{ get; set; }
 
         public int idInventarioCaracteristicas { get; set; }
+
+        public virtual Inventario inventario { get; set; }
+
+        public virtual InventarioCaracteristicas inventarioCaracteristicas { get; set; }
     }
 }
