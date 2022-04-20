@@ -481,12 +481,16 @@
     <Compile Include="Models\AspNetUsers.cs" />
     <Compile Include="Models\AspNetUsersHistorial.cs" />
     <Compile Include="Models\AttemptsQuizUser.cs" />
+    <Compile Include="Models\Categoria.cs" />
     <Compile Include="Models\ClienteUsuario.cs" />
     <Compile Include="Models\Feedback\FeedbackItemCommentMoodle.cs" />
     <Compile Include="Models\Feedback\FeedbackItemDataMoodle.cs" />
     <Compile Include="Models\Feedback\FeedbackItemMoodle.cs" />
     <Compile Include="Models\Feedback\FeedbackMoodle.cs" />
     <Compile Include="Models\Attempts.cs" />
+    <Compile Include="Models\InventarioDetalle.cs" />
+    <Compile Include="Models\InventarioCaracteristicas.cs" />
+    <Compile Include="Models\Inventario.cs" />
     <Compile Include="Models\Moodle\Feedback\AnalysisData.cs" />
     <Compile Include="Models\Moodle\Feedback\Feedback.cs" />
     <Compile Include="Models\Moodle\Feedback\FeedbackAnalysis.cs" />
