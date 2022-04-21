@@ -1,0 +1,78 @@
+﻿@model IEnumerable<SGC.Models.Inventario>
+
+@{
+    ViewBag.Title = "Lista de inventarios";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Lista de inventarios</h2>
+
+<p>
+    @Html.ActionLink("Crear Inventario", "Create", null, new { @class="btn btn-primary" })
+</p>
+<div class="container">
+    <table class="table table-stripped">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.usuario.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Codigo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaCreacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaCompra)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Stock)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PeriodoMantencion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SoftDelete)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.idCategoria)
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.usuario.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Codigo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaCreacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaCompra)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stock)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PeriodoMantencion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoftDelete)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.idCategoria)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.idInventario }) |
+                @Html.ActionLink("Details", "Details", new { id=item.idInventario }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.idInventario })
+            </td>
+        </tr>
+    }
+
+    </table>
+</div>

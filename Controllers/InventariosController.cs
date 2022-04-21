@@ -10,18 +10,19 @@ using SGC.Models;
 
 namespace SGC.Controllers
 {
-    public class CategoriaController : Controller
+    public class InventariosController : Controller
     {
         private InsecapContext db = new InsecapContext();
 
-        // GET: Categoria
+        // GET: Inventarios
         [Authorize]
         public ActionResult Index()
         {
-            return View(db.Categoria.ToList());
+            var inventario = db.Inventario.Include(i => i.usuario);
+            return View(inventario.ToList());
         }
 
-        // GET: Categoria/Details/5
+        // GET: Inventarios/Details/5
         [Authorize]
         public ActionResult Details(int? id)
         {
@@ -29,96 +30,95 @@ namespace SGC.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Categoria categoria = db.Categoria.Find(id);
-            if (categoria == null)
+            Inventario inventario = db.Inventario.Find(id);
+            if (inventario == null)
             {
                 return HttpNotFound();
             }
-            return View(categoria);
+            return View(inventario);
         }
 
-        // GET: Categoria/Create
+        // GET: Inventarios/Create
         [Authorize]
         public ActionResult Create()
         {
+            ViewBag.Id = new SelectList(db.AspNetUsers, "Id", "Address");
             return View();
         }
 
-        // POST: Categoria/Create
+        // POST: Inventarios/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [Authorize]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "idCategoria,nombre")] Categoria categoria)
+        public ActionResult Create([Bind(Include = "idInventario,Codigo,FechaCreacion,FechaCompra,Stock,PeriodoMantencion,SoftDelete,Id,idCategoria")] Inventario inventario)
         {
             if (ModelState.IsValid)
             {
-                db.Categoria.Add(categoria);
+                db.Inventario.Add(inventario);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(categoria);
+            ViewBag.Id = new SelectList(db.AspNetUsers, "Id", "Address", inventario.Id);
+            return View(inventario);
         }
 
-        // GET: Categoria/Edit/5
-        [Authorize]
+        // GET: Inventarios/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Categoria categoria = db.Categoria.Find(id);
-            if (categoria == null)
+            Inventario inventario = db.Inventario.Find(id);
+            if (inventario == null)
             {
                 return HttpNotFound();
             }
-            return View(categoria);
+            ViewBag.Id = new SelectList(db.AspNetUsers, "Id", "Address", inventario.Id);
+            return View(inventario);
         }
 
-        // POST: Categoria/Edit/5
+        // POST: Inventarios/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [Authorize]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "idCategoria,nombre")] Categoria categoria)
+        public ActionResult Edit([Bind(Include = "idInventario,Codigo,FechaCreacion,FechaCompra,Stock,PeriodoMantencion,SoftDelete,Id,idCategoria")] Inventario inventario)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(categoria).State = EntityState.Modified;
+                db.Entry(inventario).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(categoria);
+            ViewBag.Id = new SelectList(db.AspNetUsers, "Id", "Address", inventario.Id);
+            return View(inventario);
         }
 
-        // GET: Categoria/Delete/5
-        [Authorize]
+        // GET: Inventarios/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Categoria categoria = db.Categoria.Find(id);
-            if (categoria == null)
+            Inventario inventario = db.Inventario.Find(id);
+            if (inventario == null)
             {
                 return HttpNotFound();
             }
-            return View(categoria);
+            return View(inventario);
         }
 
-        // POST: Categoria/Delete/5
-        [Authorize]
+        // POST: Inventarios/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Categoria categoria = db.Categoria.Find(id);
-            db.Categoria.Remove(categoria);
+            Inventario inventario = db.Inventario.Find(id);
+            db.Inventario.Remove(inventario);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
