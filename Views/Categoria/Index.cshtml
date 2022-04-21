@@ -1,0 +1,54 @@
+﻿@model IEnumerable<SGC.Models.Categoria>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="mx-auto">
+    <h2>Lista de categorías</h2>
+    <p>
+        @Html.ActionLink("Crear categoría", "Create", null, new { @class = "btn btn-info" })
+    </p>
+</div>
+
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th class="text-center">
+                    #
+                </th>
+                <th class="text-center">
+                    @Html.DisplayNameFor(model => model.nombre)
+                </th>
+                <th class="text-center">
+                    Acción
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @{int i = 1;}
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="text-center">
+                        <span>@i</span>
+                        @{i++;}
+                    </td>
+                    <td class="text-center">
+                        @Html.DisplayFor(modelItem => item.nombre)
+                    </td>
+                    <td class="text-center">
+                        @Html.ActionLink("Editar", "Edit", new { id = item.idCategoria }, new { @class = "btn btn-primary" }) |
+                        @Html.ActionLink("Detalles", "Details", new { id = item.idCategoria }, new { @class = "btn btn-info" }) |
+                        @Html.ActionLink("Eliminar", "Delete", new { id = item.idCategoria }, new { @class = "btn btn-danger" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
