@@ -10,34 +10,24 @@
 <div>
     <h4>InventarioCaracteristicas</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.categoria.nombre)
-        </dt>
-
-        <dd>
+    <ul class="list-group">
+        <li class="list-group-item">
+            <b>@Html.DisplayNameFor(model => model.categoria.nombre): </b>
             @Html.DisplayFor(model => model.categoria.nombre)
-        </dd>
+        </li>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Detalle)
-        </dt>
-
-        <dd>
+        <li class="list-group-item">
+            <b>@Html.DisplayNameFor(model => model.Detalle): </b>
             @Html.DisplayFor(model => model.Detalle)
-        </dd>
+        </li>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.SoftDelete)
-        </dt>
-
-        <dd>
+        <li class="list-group-item">
+            <b>@Html.DisplayNameFor(model => model.SoftDelete): </b>
             @Html.DisplayFor(model => model.SoftDelete)
-        </dd>
-
-    </dl>
+        </li>
+    </ul>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.idInventarioCaracteristicas }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Volver", "Index", null, new { @class="btn btn-info" }) | 
+    @Html.ActionLink("Editar", "Edit", new { id = Model.idInventarioCaracteristicas }, new { @class = "btn btn-primary" })
 </p>

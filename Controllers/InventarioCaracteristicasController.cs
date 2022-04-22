@@ -15,6 +15,7 @@ namespace SGC.Controllers
         private InsecapContext db = new InsecapContext();
 
         // GET: InventarioCaracteristicas
+        [Authorize]
         public ActionResult Index()
         {
             var inventarioCaracteristicas = db.InventarioCaracteristicas.Include(i => i.categoria);
@@ -22,6 +23,7 @@ namespace SGC.Controllers
         }
 
         // GET: InventarioCaracteristicas/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -37,6 +39,7 @@ namespace SGC.Controllers
         }
 
         // GET: InventarioCaracteristicas/Create
+        [Authorize]
         public ActionResult Create()
         {
             ViewBag.idCategoria = new SelectList(db.Categoria, "idCategoria", "nombre");
@@ -46,6 +49,7 @@ namespace SGC.Controllers
         // POST: InventarioCaracteristicas/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "idInventarioCaracteristicas,idCategoria,Detalle,SoftDelete")] InventarioCaracteristicas inventarioCaracteristicas)
@@ -62,6 +66,7 @@ namespace SGC.Controllers
         }
 
         // GET: InventarioCaracteristicas/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -80,6 +85,7 @@ namespace SGC.Controllers
         // POST: InventarioCaracteristicas/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "idInventarioCaracteristicas,idCategoria,Detalle,SoftDelete")] InventarioCaracteristicas inventarioCaracteristicas)
@@ -95,6 +101,7 @@ namespace SGC.Controllers
         }
 
         // GET: InventarioCaracteristicas/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -110,6 +117,7 @@ namespace SGC.Controllers
         }
 
         // POST: InventarioCaracteristicas/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
