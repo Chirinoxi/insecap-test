@@ -1,17 +1,17 @@
 ﻿@model SGC.Models.InventarioCaracteristicas
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Editar Inventario Características";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Edit</h2>
 
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     <div class="container">
+        <h2>@ViewBag.Title</h2>
         <div class="form-horizontal">
             <h4>InventarioCaracteristicas</h4>
             <hr />

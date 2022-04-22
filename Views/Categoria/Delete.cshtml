@@ -1,25 +1,22 @@
 ﻿@model SGC.Models.Categoria
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Eliminar categoría";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
 <div class="container">
-    <h2>Eliminar</h2>
+    <h2>@ViewBag.Title</h2>
     <h3>¿Estás seguro de que deseas borrar esta categoría?</h3>
     <h4>Categoría</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.nombre)
-        </dt>
-
-        <dd>
+    <ul class="list-group">
+        <li class="list-group-item">
+            <b>@Html.DisplayNameFor(model => model.nombre): </b>
             @Html.DisplayFor(model => model.nombre)
-        </dd>
-
-    </dl>
+        </li>
+    </ul>
 
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()

@@ -1,11 +1,10 @@
 ﻿@model IEnumerable<SGC.Models.InventarioCaracteristicas>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Listado de inventario características";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Listado inventario de características</h2>
 
 <style>
     th, td {
@@ -21,6 +20,7 @@
 </style>
 
 <div class="content">
+    <h2>@ViewBag.Title</h2>
     <p>
         @Html.ActionLink("Crear", "Create", null, new { @class="btn btn-primary" })
     </p>
