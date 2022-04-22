@@ -5,7 +5,7 @@ Proyecto desarrollado en .NET destinado a generar un CRUD de inventarios.
 ## Modelo ER
 
 <div align="center">
-  <img src="./Images/TMSTEST/ER-Model.PNG">
+  <img src="./TMSTEST/ER-Model.PNG">
 </div>
 <br>
 
@@ -23,7 +23,7 @@ Para acceder al CRUD categorías se debe acceder a la url `https://localhost:443
 Para acceder al CRUD de Inventarios categorías se debe acceder a la url `https://localhost:44362/Inventario`, en donde se listaran todos los registros de la tabla **Inventario**.
 
 <div align="center">
-  <img src="./Images/TMSTEST/InventarioIndex.PNG">
+  <img src="./TMSTEST/InventarioIndex.PNG">
 </div>
 <br>
 
@@ -32,5 +32,5 @@ Para acceder al CRUD de Inventarios categorías se debe acceder a la url `https:
 Para acceder al CRUD Inventario Características se debe acceder a la url `https://localhost:44362/InventarioCaracteristicas`, en donde se listaran todos los registros de la tabla **InventarioCaracteristicas**.
 
 <div align="center">
-  <img src="./Images/TMSTEST/InventarioCaracteristicasIndex.PNG">
+  <img src="./TMSTEST/InventarioCaracteristicasIndex.PNG">
 </div>
