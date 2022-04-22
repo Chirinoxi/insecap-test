@@ -122,7 +122,7 @@ namespace SGC.Models
         // ------------------------------ INSECAP TEST ------------------------------
         public virtual DbSet<Categoria> Categoria { get; set; }
         public virtual DbSet<Inventario> Inventario { get; set; }
-        public virtual DbSet<InventarioDetalle> InventarioDetalle { get; set; }
+        // public virtual DbSet<InventarioDetalle> InventarioDetalle { get; set; }
         public virtual DbSet<InventarioCaracteristicas> InventarioCaracteristicas { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

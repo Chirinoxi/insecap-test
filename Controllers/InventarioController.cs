@@ -10,20 +10,18 @@ using SGC.Models;
 
 namespace SGC.Controllers
 {
-    public class InventariosController : Controller
+    public class InventarioController : Controller
     {
         private InsecapContext db = new InsecapContext();
 
-        // GET: Inventarios
-        [Authorize]
+        // GET: Inventario
         public ActionResult Index()
         {
-            var inventario = db.Inventario.Include(i => i.usuario);
+            var inventario = db.Inventario.Include(i => i.categoria).Include(i => i.usuario);
             return View(inventario.ToList());
         }
 
-        // GET: Inventarios/Details/5
-        [Authorize]
+        // GET: Inventario/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -38,15 +36,15 @@ namespace SGC.Controllers
             return View(inventario);
         }
 
-        // GET: Inventarios/Create
-        [Authorize]
+        // GET: Inventario/Create
         public ActionResult Create()
         {
+            ViewBag.idCategoria = new SelectList(db.Categoria, "idCategoria", "nombre");
             ViewBag.Id = new SelectList(db.AspNetUsers, "Id", "Address");
             return View();
         }
 
-        // POST: Inventarios/Create
+        // POST: Inventario/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -60,11 +58,12 @@ namespace SGC.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.idCategoria = new SelectList(db.Categoria, "idCategoria", "nombre", inventario.idCategoria);
             ViewBag.Id = new SelectList(db.AspNetUsers, "Id", "Address", inventario.Id);
             return View(inventario);
         }
 
-        // GET: Inventarios/Edit/5
+        // GET: Inventario/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -76,11 +75,12 @@ namespace SGC.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.idCategoria = new SelectList(db.Categoria, "idCategoria", "nombre", inventario.idCategoria);
             ViewBag.Id = new SelectList(db.AspNetUsers, "Id", "Address", inventario.Id);
             return View(inventario);
         }
 
-        // POST: Inventarios/Edit/5
+        // POST: Inventario/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -93,11 +93,12 @@ namespace SGC.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.idCategoria = new SelectList(db.Categoria, "idCategoria", "nombre", inventario.idCategoria);
             ViewBag.Id = new SelectList(db.AspNetUsers, "Id", "Address", inventario.Id);
             return View(inventario);
         }
 
-        // GET: Inventarios/Delete/5
+        // GET: Inventario/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -112,7 +113,7 @@ namespace SGC.Controllers
             return View(inventario);
         }
 
-        // POST: Inventarios/Delete/5
+        // POST: Inventario/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

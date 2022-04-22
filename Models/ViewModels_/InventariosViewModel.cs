@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace SGC.Models.ViewModels
+namespace SGC.Models.ViewModels_
 {
     public class InventariosViewModel
     {
