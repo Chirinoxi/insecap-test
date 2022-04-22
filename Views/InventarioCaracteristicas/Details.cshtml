@@ -1,0 +1,33 @@
+﻿@model SGC.Models.InventarioCaracteristicas
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>InventarioCaracteristicas</h4>
+    <hr />
+    <ul class="list-group">
+        <li class="list-group-item">
+            <b>@Html.DisplayNameFor(model => model.categoria.nombre): </b>
+            @Html.DisplayFor(model => model.categoria.nombre)
+        </li>
+
+        <li class="list-group-item">
+            <b>@Html.DisplayNameFor(model => model.Detalle): </b>
+            @Html.DisplayFor(model => model.Detalle)
+        </li>
+
+        <li class="list-group-item">
+            <b>@Html.DisplayNameFor(model => model.SoftDelete): </b>
+            @Html.DisplayFor(model => model.SoftDelete)
+        </li>
+    </ul>
+</div>
+<p>
+    @Html.ActionLink("Volver", "Index", null, new { @class="btn btn-info" }) | 
+    @Html.ActionLink("Editar", "Edit", new { id = Model.idInventarioCaracteristicas }, new { @class = "btn btn-primary" })
+</p>

@@ -1,0 +1,105 @@
+﻿@model IEnumerable<SGC.Models.Inventario>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Listado de inventarios</h2>
+
+<style>
+    th, td {
+        text-align: center;
+        vertical-align: middle;
+    }
+    .content {
+        margin-right: 8%;
+        margin-left: 5%;
+        margin-top: 2%;
+        margin-right: 0;
+    }
+</style>
+
+<div class="content">
+    <p>
+        @Html.ActionLink("Crear inventario", "Create", null, new { @class="btn btn-primary" })
+    </p>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>
+                    #
+                </th>
+                <th>
+                    Categoría
+                </th>
+                <th>
+                    Nombre del creador
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Codigo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FechaCreacion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FechaCompra)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Stock)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PeriodoMantencion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SoftDelete)
+                </th>
+                <th>
+                    Acción
+                </th>
+            </tr>
+        </thead>
+        @{int i = 1;}
+        <tbody>
+            @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @i
+                </td>
+                @{i++;}
+                <td>
+                    @Html.DisplayFor(modelItem => item.categoria.nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.usuario.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Codigo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaCreacion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaCompra)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Stock)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PeriodoMantencion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SoftDelete)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.idInventario }, new { @class = "btn btn-primary" }) |  
+                    @Html.ActionLink("Detalles", "Details", new { id = item.idInventario }, new { @class = "btn btn-info" }) |  
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.idInventario }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+            }
+        </tbody>
+
+    </table>
+</div>
+

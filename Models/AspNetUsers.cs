@@ -93,6 +93,7 @@ namespace SGC.Models
         public virtual Storage firma { get; set; }
 
         public TipoUsuario tipo { get; set; }
+
     }
 
     public enum TipoUsuario

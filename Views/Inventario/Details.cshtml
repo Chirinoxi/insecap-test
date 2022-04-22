@@ -1,0 +1,58 @@
+﻿@model SGC.Models.Inventario
+
+@{
+    ViewBag.Title = "Detalle inventario";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalle inventario</h2>
+
+<div class="container">
+    <h4>Inventario</h4>
+    <hr />
+    <ul class="list-group">
+        <li class="list-group-item">
+            <b>@Html.DisplayNameFor(model => model.categoria.nombre): </b>
+            @Html.DisplayFor(model => model.categoria.nombre)
+        </li>
+
+        <li class="list-group-item">
+            <b>@Html.DisplayNameFor(model => model.usuario.Address): </b>
+             @Html.DisplayFor(model => model.usuario.Address)
+        </li>
+
+        <li class="list-group-item">
+            <b>@Html.DisplayNameFor(model => model.Codigo): </b>
+            @Html.DisplayFor(model => model.Codigo)
+        </li>
+
+        <li class="list-group-item">
+            <b>@Html.DisplayNameFor(model => model.FechaCreacion): </b>
+            @Html.DisplayFor(model => model.FechaCreacion)
+        </li>
+
+        <li class="list-group-item">
+            <b>@Html.DisplayNameFor(model => model.FechaCompra): </b>
+            @Html.DisplayFor(model => model.FechaCompra)
+        </li>
+
+        <li class="list-group-item">
+            <b>@Html.DisplayNameFor(model => model.Stock): </b>
+            @Html.DisplayFor(model => model.Stock)
+        </li>
+
+        <li class="list-group-item">
+            <b>@Html.DisplayNameFor(model => model.PeriodoMantencion): </b>
+            @Html.DisplayFor(model => model.PeriodoMantencion)
+        </li>
+
+        <li class="list-group-item">
+            <b>@Html.DisplayNameFor(model => model.SoftDelete): </b>
+            @Html.DisplayFor(model => model.SoftDelete)
+        </li>
+    </ul>
+    <p>
+        @Html.ActionLink("Volver", "Index", null, new { @class="btn btn-info" }) | 
+        @Html.ActionLink("Editar", "Edit", new { id = Model.idInventario }, new { @class="btn btn-primary" })
+    </p>
+</div>

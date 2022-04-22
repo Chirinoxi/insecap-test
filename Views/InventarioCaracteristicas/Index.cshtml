@@ -1,0 +1,69 @@
+﻿@model IEnumerable<SGC.Models.InventarioCaracteristicas>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Listado inventario de características</h2>
+
+<style>
+    th, td {
+        text-align: center;
+        vertical-align: middle;
+    }
+    .content {
+        margin-right: 8%;
+        margin-left: 5%;
+        margin-top: 2%;
+        margin-right: 0;
+    }
+</style>
+
+<div class="content">
+    <p>
+        @Html.ActionLink("Crear", "Create", null, new { @class="btn btn-primary" })
+    </p>
+    <table class="table table-striped">
+        <tr>
+            <th>
+                #
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.categoria.nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Detalle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SoftDelete)
+            </th>
+            <th>
+                Acción
+            </th>
+        </tr>
+    @{ int i = 1; }
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @i
+            </td>
+            @{i++;}
+            <td>
+                @Html.DisplayFor(modelItem => item.categoria.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Detalle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoftDelete)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id=item.idInventarioCaracteristicas }, new { @class="btn btn-primary" }) |  
+                @Html.ActionLink("Detalles", "Details", new { id=item.idInventarioCaracteristicas }, new { @class="btn btn-info" }) |  
+                @Html.ActionLink("Eliminar", "Delete", new { id=item.idInventarioCaracteristicas }, new { @class="btn btn-danger" })
+            </td>
+        </tr>
+    }
+    </table>
+</div>

@@ -1,0 +1,23 @@
+﻿@model SGC.Models.Categoria
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalles</h2>
+
+<div class="container">
+    <h4>Categoria</h4>
+    <hr />
+    <ul class="list-group">
+        <li class="list-group-item">
+            <b>@Html.DisplayNameFor(model => model.nombre):</b> 
+            @Html.DisplayFor(model => model.nombre)
+        </li>
+    </ul>
+    <p>
+        @Html.ActionLink("Volver", "Index", null, new { @class="btn btn-info" }) | 
+        @Html.ActionLink("Editar", "Edit", new { id = Model.idCategoria }, new { @class = "btn btn-primary" })
+    </p>
+</div>
