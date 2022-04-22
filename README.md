@@ -14,7 +14,7 @@ Proyecto desarrollado en .NET destinado a generar un CRUD de inventarios.
 Para acceder al CRUD categorías se debe acceder a la url `https://localhost:44362/Categoria`, en donde se listaran todos los registros de la tabla **Categoria**.
 
 <div align="center">
-  <img src="./Images/TMSTEST/CategoriaIndex.PNG">
+  <img src="./TMSTEST/CategoriaIndex.PNG">
 </div>
 <br>
 
