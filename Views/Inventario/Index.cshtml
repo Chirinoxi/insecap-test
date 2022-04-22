@@ -12,8 +12,8 @@
         text-align: center;
     }
     .content {
+        margin-right: 8%;
         margin-left: 5%;
-        margin-right: 5%;
         margin-top: 2%;
         margin-right: 0;
     }
@@ -33,7 +33,7 @@
                     Categoría
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.usuario.Address)
+                    Nombre del creador
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.Codigo)
@@ -53,7 +53,9 @@
                 <th>
                     @Html.DisplayNameFor(model => model.SoftDelete)
                 </th>
-                <th></th>
+                <th>
+                    Acción
+                </th>
             </tr>
         </thead>
         @{int i = 1;}
@@ -89,8 +91,8 @@
                     @Html.DisplayFor(modelItem => item.SoftDelete)
                 </td>
                 <td>
-                    @Html.ActionLink("Editar", "Edit", new { id = item.idInventario }, new { @class = "btn btn-primary" }) |
-                    @Html.ActionLink("Detalles", "Details", new { id = item.idInventario }, new { @class = "btn btn-info" }) |
+                    @Html.ActionLink("Editar", "Edit", new { id = item.idInventario }, new { @class = "btn btn-primary" }) |  
+                    @Html.ActionLink("Detalles", "Details", new { id = item.idInventario }, new { @class = "btn btn-info" }) |  
                     @Html.ActionLink("Eliminar", "Delete", new { id = item.idInventario }, new { @class = "btn btn-danger" })
                 </td>
             </tr>

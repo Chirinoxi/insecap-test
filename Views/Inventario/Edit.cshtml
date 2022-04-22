@@ -1,11 +1,11 @@
 ﻿@model SGC.Models.Inventario
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Editar inventario";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Edit</h2>
+<h2>Editar inventario</h2>
 
 
 @using (Html.BeginForm())
@@ -70,7 +70,7 @@
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.Id, "Id", htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.LabelFor(model => model.Id, "Nombre usuario creador", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.DropDownList("Id", null, htmlAttributes: new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.Id, "", new { @class = "text-danger" })
@@ -78,7 +78,7 @@
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.idCategoria, "idCategoria", htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.LabelFor(model => model.idCategoria, "Categoría", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.DropDownList("idCategoria", null, htmlAttributes: new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.idCategoria, "", new { @class = "text-danger" })
@@ -87,7 +87,7 @@
 
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Save" class="btn btn-default" />
+                    <input type="submit" value="Editar" class="btn btn-primary" />
                 </div>
             </div>
         </div>
