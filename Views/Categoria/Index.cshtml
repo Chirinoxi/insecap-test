@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<SGC.Models.Categoria>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Listado de categorías";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -19,7 +19,7 @@
 </style>
 
 <div class="content">
-    <h2>Lista de categorías</h2>
+    <h2>@ViewBag.Title</h2>
     <p>
         @Html.ActionLink("Crear categoría", "Create", null, new { @class = "btn btn-info" })
     </p>
