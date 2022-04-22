@@ -11,7 +11,7 @@ namespace SGC.Models
         public int idCategoria { get; set; }
 
         [Required(ErrorMessage = "El campo {0} es obligatorio")]
-        [Display(Name = "Nombre")]
+        [Display(Name = "Nombre categoria")]
         public string nombre { get; set; }
 
     }

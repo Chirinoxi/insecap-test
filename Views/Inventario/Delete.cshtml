@@ -1,89 +1,65 @@
 ﻿@model SGC.Models.Inventario
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Eliminar inventario";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Delete</h2>
+<h2>Eliminar inventario</h2>
+<h3>¿Está seguro de que desea eliminar este inventario?</h3>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
+<div class="container">
     <h4>Inventario</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.categoria.nombre)
-        </dt>
-
-        <dd>
+    <ul class="list-group">
+        <li class="list-group-item">
+            @Html.DisplayNameFor(model => model.categoria.nombre):
             @Html.DisplayFor(model => model.categoria.nombre)
-        </dd>
+        </li>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.usuario.Address)
-        </dt>
-
-        <dd>
+        <li class="list-group-item">
+            @Html.DisplayNameFor(model => model.usuario.Address):
             @Html.DisplayFor(model => model.usuario.Address)
-        </dd>
+        </li>
 
-        <dt>
+        <li class="list-group-item">
             @Html.DisplayNameFor(model => model.Codigo)
-        </dt>
-
-        <dd>
             @Html.DisplayFor(model => model.Codigo)
-        </dd>
+        </li>
 
-        <dt>
+        <li class="list-group-item">
             @Html.DisplayNameFor(model => model.FechaCreacion)
-        </dt>
-
-        <dd>
             @Html.DisplayFor(model => model.FechaCreacion)
-        </dd>
+        </li>
 
-        <dt>
+        <li class="list-group-item">
             @Html.DisplayNameFor(model => model.FechaCompra)
-        </dt>
-
-        <dd>
             @Html.DisplayFor(model => model.FechaCompra)
-        </dd>
+        </li>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Stock)
-        </dt>
-
-        <dd>
+        <li class="list-group-item">
+            @Html.DisplayNameFor(model => model.Stock):
             @Html.DisplayFor(model => model.Stock)
-        </dd>
+        </li>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PeriodoMantencion)
-        </dt>
-
-        <dd>
+        <li class="list-group-item">
+            @Html.DisplayNameFor(model => model.PeriodoMantencion):
             @Html.DisplayFor(model => model.PeriodoMantencion)
-        </dd>
+        </li>
 
-        <dt>
+        <li class="list-group-item">
             @Html.DisplayNameFor(model => model.SoftDelete)
-        </dt>
-
-        <dd>
             @Html.DisplayFor(model => model.SoftDelete)
-        </dd>
+        </li>
 
-    </dl>
+    </ul>
 
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            @Html.ActionLink("Volver", "Index", null, new { @class= "btn btn-info" }) | 
+            <input type="submit" value="Eliminnar" class="btn btn-danger" />
         </div>
     }
 </div>
