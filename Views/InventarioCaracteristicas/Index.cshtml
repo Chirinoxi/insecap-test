@@ -1,0 +1,46 @@
+﻿@model IEnumerable<SGC.Models.InventarioCaracteristicas>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.categoria.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Detalle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoftDelete)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.categoria.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Detalle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoftDelete)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idInventarioCaracteristicas }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idInventarioCaracteristicas }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idInventarioCaracteristicas })
+        </td>
+    </tr>
+}
+
+</table>

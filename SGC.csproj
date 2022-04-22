@@ -428,6 +428,7 @@
     <Compile Include="Controllers\DocumentController.cs" />
     <Compile Include="Controllers\FileAzuresController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InventarioCaracteristicasController.cs" />
     <Compile Include="Controllers\InventarioController.cs" />
     <Compile Include="Controllers\ItemController.cs" />
     <Compile Include="Controllers\LinkController.cs" />
@@ -3174,6 +3175,11 @@
     <Content Include="Views\Inventario\Details.cshtml" />
     <Content Include="Views\Inventario\Edit.cshtml" />
     <Content Include="Views\Inventario\Index.cshtml" />
+    <Content Include="Views\InventarioCaracteristicas\Create.cshtml" />
+    <Content Include="Views\InventarioCaracteristicas\Delete.cshtml" />
+    <Content Include="Views\InventarioCaracteristicas\Details.cshtml" />
+    <Content Include="Views\InventarioCaracteristicas\Edit.cshtml" />
+    <Content Include="Views\InventarioCaracteristicas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
